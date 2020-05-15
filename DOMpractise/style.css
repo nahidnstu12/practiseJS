@@ -1,0 +1,20 @@
+body::-webkit-scrollbar {
+    width: .75rem;
+}
+*::-webkit-scrollbar-track {
+    background-color: #edf2f7;
+}
+*::-webkit-scrollbar-thumb {
+    background-color: #718096;
+    border-radius: 9999px;
+}
+.wrapper {
+    max-height: 32rem;
+    overflow: hidden;
+}
+.content {
+    height: 100%;
+    overflow: auto;
+    margin-right: -1rem;
+    padding-right: 1rem;
+}

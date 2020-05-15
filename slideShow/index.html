@@ -1,0 +1,150 @@
+<html>
+	<head>
+		<title>Image Gallery</title>
+
+		<!-- import bootstrap -->
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="bootstrap.css"
+		      />
+
+		<!-- import our own stylesheet -->
+		<link rel="stylesheet"
+			  type="text/css"
+			  href="styles.css"
+		      />	
+
+		<!-- import jQuery -->
+		<!-- <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+	</head>
+	<body>
+	<div class="container">
+		<h1 id="title">Image Gallery</h1>
+		<!-- <h1 id="title" onmouseenter="alert('hello');" >Hello</h1> -->
+		<!-- <h1 id="title" onmouseenter="alert('hello');" >Hello</h1> -->
+		<!--
+		   These are the thumbnail images.
+		   They are laid out using the 
+		   bootstrap grid.
+		   I have given them all the class
+		   "crop-image" which I use in the
+		   css and the javascript code.
+		-->
+		<div class="row">
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_1.jpg" 
+				  alt="graffittied building"
+				  name='img_1.jpg'
+				  id="image1"/> 
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_2.jpg" 
+				  alt="display of cheese"
+				  name='img_2.jpg'
+				  id="image2"/> 
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" 
+				  src="img_3.jpg" 
+				  alt="synethesizer workshop"
+				  name='img_3.jpg'
+				  id="image3"/> 
+			</div>
+			<div class="col-md-3">
+				<img class="crop-img" 
+				   src="img_4.jpg" 
+				   alt="City night"
+				   name='img_4.jpg'
+				   id="image4"/> 
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-1">
+				<button id="backward">&lt;</button>
+			</div>
+			<div class="col-md-10">
+				<img id="bigImage" class="large-img" src="img_1.jpg" alt="graffittied building"/> 
+			</div>
+			<div class="col-md-1">
+				<button id="forward">&gt;</button>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		
+		const crop = document.querySelector('.crop-img')
+		const bigImg = document.querySelector('#bigImage')
+		const title = document.querySelector('#title')
+		const img = document.querySelector('#image')
+		const row = document.querySelector('.row')
+		const backward = document.querySelector('#backward')
+		const forward = document.querySelector('#forward')
+
+		// $(".crop-img").click(function(){
+		// 	$("#bigImage").attr('src', $(this).attr('src'));
+		// });
+		let pause = false
+
+		row.addEventListener('click',e=>{
+			bigImg.setAttribute('src',e.target.name)
+		})
+
+		let counter = 1
+		document.querySelector('#image'+counter).click()
+
+		backward.addEventListener('click',()=>{
+			counter-= 1
+			if(counter <1){
+				counter =4
+			}
+			document.querySelector('#image'+counter).click()
+		})
+		forward.addEventListener('click',()=>{
+			counter+= 1
+			if(counter >4){
+				counter =1
+			}
+			document.querySelector('#image'+counter).click()
+		})
+		bigImg.addEventListener('click',()=>{
+			pause = !pause
+		})
+		setInterval(()=>{
+			if(!pause){
+				forward.click()
+			}
+		},2000)
+
+		// $("#title").hover(function(){
+		// $("#title").css("color", "red");
+		// }, 
+		// function(){
+		// $("#title").css("color", "black");
+		// })
+		// function no(){ 
+		// 	$(this).html("I'm offended");
+		// 	}
+		// 	$("#title").mouseleave(function(){ 
+		// 	$(this).html("I'm offended");
+		// 	});
+ 		// 	$("h1.title").html($("#chapterTitle"+3));
+		// 	// alert($("#title").html());
+
+		// 	var number = 1;
+
+		
+	</script>
+
+	</body>
+</html>
+
+
+
+
+
+
+
