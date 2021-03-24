@@ -1,0 +1,28 @@
+// mixins
+@mixin font-styles($font-weight:500,$font-size:30px,$line-height:47px) {
+    font-family: $font-montserrat;
+    font-style: normal;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+}
+
+@mixin display-flex($flex:flex,$justify:center,$align-items:center) {
+    display: $flex;
+    justify-content: $justify;
+    align-items: $align-items;
+}
+
+// @mixin position($position:relative,$value:0,$property...) {
+//     position: $position;
+//     $property:$value;
+//     // top:0;
+//     // left: 0;
+//     // right: 0;
+//     // bottom: 0;
+
+// }
+
+// @mixin padding-margin {
+    
+// }

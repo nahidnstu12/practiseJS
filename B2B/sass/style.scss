@@ -1,5 +1,223 @@
+@import 'variables';
+@import 'mixins';
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: $font-family;
+  // width: 1440px;
+  /* height: 5107px; */
+}
+li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: $text-link-color;
+}
+// first header
+
+.top-nav {
+  background-color: $header-background;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+  .top-items {
+    @include display-flex($justify: space-between);
+    list-style: none;
+    padding: 7px 30px;
+
+    .top-item a {
+      position: relative;
+      margin: 0 20px;
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}
+
+/* Second header */
+
+.main-nav {
+  background-color: $text-white-color;
+  width: 100%;
+  @include display-flex($justify: space-between);
+  .logo {
+    @include font-styles;
+    padding-left: 43px;
+  }
+  .main-items {
+    @include display-flex($justify: space-between);
+    list-style: none;
+    padding: 7px 30px;
+
+    .item .hotline-section {
+      display: flex;
+      .hotline {
+        color: $text-black-color;
+
+        @include font-styles($font-size: 15px, $line-height: 18px);
+        margin-left: 4px;
+
+        .hot-number {
+          @include font-styles($font-size: 10px, $line-height: 12px);
+        }
+      }
+    }
+    .item .header__search {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      border-radius: 24px;
+      height: 40px;
+      width: 265px;
+      .brand-btn {
+        @include display-flex();
+        position: relative;
+        left: 3px;
+        top: 0px;
+        width: 146px;
+        height: 36px;
+        color: $text-white-color;
+        background: #636363;
+        border-radius: 5px 0px 0px 5px;
+        padding: 18px;
+        border: none;
+        outline: none;
+        .b-logo {
+          margin-left: 5px;
+        }
+      }
+    }
+    .header__searchInput {
+      height: 36px;
+      padding: 10px;
+      border: none;
+      width: 465px;
+      border-radius: 6px;
+      background: $header-background;
+      outline: none;
+    }
+
+    .item .header__searchIcon {
+      padding: 8px;
+      height: 34px !important;
+      background-color: $header-background;
+      position: relative;
+      right: 38px;
+      top: 0;
+    }
+    .item .category {
+      width: 203px;
+      height: 38px;
+      outline: none;
+      padding: 5px;
+      background: linear-gradient(90.14deg, #08b2bd 0.11%, #08bd99 99.88%);
+      border-radius: 5px;
+      margin: 0 39px;
+      border: none;
+      color: $text-white-color;
+      
+      @include font-styles($font-size: 20px, $line-height: 24px);
+     
+      @include display-flex();
+      .category-icon {
+        margin-left: 15px;
+      }
+    }
+    .wish {
+      display: flex;
+      align-items: center;
+      .wish-icon {
+        margin-right: 16px;
+      }
+
+      .wish-count {
+        position: relative;
+        width: 20px;
+        height: 15px;
+        left: -24px;
+        top: -10px;
+        
+        @include font-styles($font-size: 13px, $line-height: 12px);
+        
+        text-align: center;
+        @include display-flex();
+       
+        border-radius: 50%;
+        border: 8px solid #08bd99;
+        color: $text-white-color;
+      }
+    }
+    .cart {
+      display: flex;
+      align-items: center;
+      .cart-count {
+        position: relative;
+        width: 20px;
+        height: 15px;
+        left: -8px;
+        top: -8px;
+        
+        @include font-styles($font-size: 13px, $line-height: 12px);
+        
+        @include display-flex();
+        border-radius: 50%;
+        border: 8px solid #08bd99;
+        color: $text-white-color;
+      }
+    }
+    .item a {
+      position: relative;
+      margin: 0 20px;
+    }
+  }
+}
+
+/* carrousal section */
+.section-one {
+  display: flex;
+  background-color: #e5e5e5;
+  min-width: 100%;
+  overflow: hidden;
+  .left {
+    width: 370px;
+    margin-left: 34px;
+    .all-services {
+      margin-top: 20px;
+    }
+    .services {
+      display: flex;
+      align-items: center;
+      background: $text-white-color;
+      border-radius: 5px;
+      padding: 9px;
+      margin-bottom: 19px;
+      margin-right: 21px;
+      height: 50px;
+      .service-icon {
+        width: 34px;
+        margin-left: 38px;
+        margin-right: 21px;
+      }
+      .service-text {
+        @include font-styles($font-size: 15px, $line-height: 18px);
+      }
+    }
+  }
+  .right {
+    width: 620px;
+    height: 326px;
+    img {
+      margin-top: 20px;
+      /* margin-left: 21px; */
+      margin-right: 43px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
