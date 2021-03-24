@@ -43,13 +43,16 @@ li a {
 /* Second header */
 
 .main-nav {
+  @include display-flex($justify: space-between);
   background-color: $text-white-color;
   width: 100%;
-  @include display-flex($justify: space-between);
+  height: 69px;
+
   .logo {
     @include font-styles;
     padding-left: 43px;
   }
+
   .main-items {
     @include display-flex($justify: space-between);
     list-style: none;
@@ -58,9 +61,8 @@ li a {
     .item .hotline-section {
       display: flex;
       .hotline {
-        color: $text-black-color;
-
         @include font-styles($font-size: 15px, $line-height: 18px);
+        color: $text-black-color;
         margin-left: 4px;
 
         .hot-number {
@@ -69,27 +71,24 @@ li a {
       }
     }
     .item .header__search {
-      // display: flex;
-      // align-items: center;
       @include display-flex($justify:null);
       flex: 1;
       border-radius: 24px;
       height: 40px;
-      width: 265px;
+      width: 420px;
       .brand-btn {
         @include display-flex();
-        // position: relative;
-        // left: 3px;
-        // top: 0px;
         @include position($left:3px,$top:0);
         width: 146px;
         height: 36px;
         color: $text-white-color;
-        background: #636363;
+        font-size: 15px;
+        background: $brand-btn-color;
         border-radius: 5px 0px 0px 5px;
         padding: 18px;
         border: none;
         outline: none;
+
         .b-logo {
           margin-left: 5px;
         }
@@ -100,6 +99,7 @@ li a {
       padding: 10px;
       border: none;
       width: 465px;
+      font-size: 15px;
       border-radius: 6px;
       background: $header-background;
       outline: none;
@@ -114,62 +114,58 @@ li a {
       top: 0;
     }
     .item .category {
+      @include font-styles($font-size: 20px, $line-height: 24px);
+      @include display-flex();
+
       width: 203px;
-      height: 38px;
+      height: 36px;
       outline: none;
       padding: 5px;
       background: linear-gradient(90.14deg, #08b2bd 0.11%, #08bd99 99.88%);
       border-radius: 5px;
-      margin: 0 39px;
+      margin: 0 15px 0 -9px;
       border: none;
       color: $text-white-color;
-      
-      @include font-styles($font-size: 20px, $line-height: 24px);
-     
-      @include display-flex();
+
       .category-icon {
         margin-left: 15px;
       }
     }
+
     .wish {
       display: flex;
       align-items: center;
+
       .wish-icon {
-        margin-right: 16px;
+        margin-right: -3px;
       }
 
       .wish-count {
-        position: relative;
+        @include position($left:-10px,$top:-10px);
+        @include font-styles($font-size: 13px, $line-height: 12px);
+        @include display-flex();
+
         width: 20px;
         height: 15px;
-        left: -24px;
-        top: -10px;
-        
-        @include font-styles($font-size: 13px, $line-height: 12px);
-        
         text-align: center;
-        @include display-flex();
-       
         border-radius: 50%;
-        border: 8px solid #08bd99;
+        border: 8px solid #{$count-color};
         color: $text-white-color;
       }
     }
     .cart {
       display: flex;
       align-items: center;
+
       .cart-count {
-        position: relative;
+        @include position($left:-8px,$top:-8px);
+        @include font-styles($font-size: 13px, $line-height: 12px);
+        @include display-flex();
+
         width: 20px;
         height: 15px;
-        left: -8px;
-        top: -8px;
-        
-        @include font-styles($font-size: 13px, $line-height: 12px);
-        
-        @include display-flex();
         border-radius: 50%;
-        border: 8px solid #08bd99;
+        border: 8px solid #{$count-color};
         color: $text-white-color;
       }
     }
@@ -183,12 +179,14 @@ li a {
 /* carrousal section */
 .section-one {
   display: flex;
-  background-color: #e5e5e5;
+  background-color: $header-background;
   min-width: 100%;
   overflow: hidden;
+
   .left {
     width: 370px;
     margin-left: 34px;
+
     .all-services {
       margin-top: 20px;
     }
@@ -201,6 +199,7 @@ li a {
       margin-bottom: 19px;
       margin-right: 21px;
       height: 50px;
+
       .service-icon {
         width: 34px;
         margin-left: 38px;
@@ -212,23 +211,18 @@ li a {
     }
   }
   .right {
-    width: 620px;
+    width: 1049px;
     height: 326px;
+
     img {
-      margin-top: 20px;
-      /* margin-left: 21px; */
+      // margin: 20px 43px 20px 0;
+       margin-top: 20px; 
       margin-right: 43px;
       margin-bottom: 20px;
+      margin-left: 20px;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
-.tese{
-  width: 100px;
-  height: 100px;
-  background: #000;
-  .tip{
-    color: #08b2bd;
-    @include position($top:20px,$left:20px);
-  }
-}
