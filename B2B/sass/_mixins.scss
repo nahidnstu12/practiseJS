@@ -13,16 +13,12 @@
     align-items: $align-items;
 }
 
-// @mixin position($position:relative,$value:0,$property...) {
-//     position: $position;
-//     $property:$value;
-//     // top:0;
-//     // left: 0;
-//     // right: 0;
-//     // bottom: 0;
+@mixin position($position:relative,$top:null,$left:null,$right:null,$bottom:null) {
+    position: $position;
+    top:$top;
+    left:$left;
+    right: $right;
+    bottom: $bottom;
 
-// }
+}
 
-// @mixin padding-margin {
-    
-// }

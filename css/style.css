@@ -88,8 +88,8 @@ li a {
 
 .main-nav .main-items .item .header__search {
   display: flex;
-  flex: 1;
   align-items: center;
+  flex: 1;
   border-radius: 24px;
   height: 40px;
   width: 265px;
@@ -100,8 +100,8 @@ li a {
   justify-content: center;
   align-items: center;
   position: relative;
+  top: 0;
   left: 3px;
-  top: 0px;
   width: 146px;
   height: 36px;
   color: #ffffff;
@@ -269,4 +269,17 @@ li a {
   /* margin-left: 21px; */
   margin-right: 43px;
   margin-bottom: 20px;
+}
+
+.tese {
+  width: 100px;
+  height: 100px;
+  background: #000;
+}
+
+.tese .tip {
+  color: #08b2bd;
+  position: relative;
+  top: 20px;
+  left: 20px;
 }

@@ -69,17 +69,19 @@ li a {
       }
     }
     .item .header__search {
-      display: flex;
+      // display: flex;
+      // align-items: center;
+      @include display-flex($justify:null);
       flex: 1;
-      align-items: center;
       border-radius: 24px;
       height: 40px;
       width: 265px;
       .brand-btn {
         @include display-flex();
-        position: relative;
-        left: 3px;
-        top: 0px;
+        // position: relative;
+        // left: 3px;
+        // top: 0px;
+        @include position($left:3px,$top:0);
         width: 146px;
         height: 36px;
         color: $text-white-color;
@@ -221,3 +223,12 @@ li a {
   }
 }
 
+.tese{
+  width: 100px;
+  height: 100px;
+  background: #000;
+  .tip{
+    color: #08b2bd;
+    @include position($top:20px,$left:20px);
+  }
+}
