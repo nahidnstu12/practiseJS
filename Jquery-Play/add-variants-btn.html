@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.79.0">
+    <title>Jquery Template · Bootstrap v5.0</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Favicons -->
+
+</head>
+
+<body>
+    <main class="container" style="margin: 50px;">
+        <!-- project description -->
+        <div class="m-2">
+            <p>
+                <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    Project-Description
+                </a>
+
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    First, Input positive quantity.Then add some variants with quantity.You can equal or less quantity.
+                    <br>Perform basic validations.At first,hide variants input fields.When checked,it fade in.
+                    <br> Otherwise, take a button, when button clicks, generate two input field,taking name & quantity.
+                    <br>Last prints data with variants.
+                </div>
+            </div>
+        </div>
+        <!-- {{-- Product Variants --}} -->
+        <form action="" method="" style="margin: 50px;">
+            <!-- {{-- Available Quantity --}} -->
+
+            <div class="form-group row">
+                <div class="col-xl-3 col-lg-3 text-right">Total Quantity: <span class="text-danger">*</span></div>
+                <div class="col-xl-6 col-lg-6">
+                    <input type="number" name="quantity" value="" class="form-control total_quantity mb-5">
+                </div>
+            </div>
+
+            <div class="form-group m-form__group row">
+                <label class="col-xl-3 col-lg-3 col-form-label text-right">Different Sizes:
+                    <button type="button" class="btn btn-primary" onclick="addvariants()">Enter Options</button>
+                </label>
+                <div class="col-xl-9 col-lg-9 justify-content-around">
+                    <div class="row">
+                        <div class="card p-3" hidden>
+                            <h5>Add Some Variants</h5>
+                            <div class="card-body">
+                                <!-- <div class="form-group p-1 my-1">
+                                    <input type="text" class="form-group p-1" placeholder="Name Of Variant"
+                                        id="variant[1][name]">
+                                    <input type="number" class="form-group p-1" placeholder="Quantity"
+                                        id="variant[1][quantity]">
+                                    <button class="btn btn-sm btn-warning" onclick="addvariants()">ADD </button>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <h4><span class="badge bg-success my-2" style="cursor: pointer" id="click">Add Quantity</span></h4>
+                </div>
+            </div>
+            </div>
+
+        </form>
+        <div class="print-data"></div>
+
+    </main><!-- /.container -->
+    <!-- bs js -->
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
+    <!-- jquery -->
+    <script src="../assets/js/jQuery.js"></script>
+
+    <script>
+        let i = 0;
+        function addvariants() {
+            $('.card').prop('hidden', false);
+            ++i;
+            // console.log('hi')
+            let inputField = `
+            <div class="form-group p-1 my-1">
+                <input type="text" class="form-group p-1 titles" placeholder="Name Of Variant"
+                    name="variant[${i}][title]">
+                <input type="number" class="form-group p-1 quantity" placeholder="Quantity"
+                    name="variant[${i}][quantity]">
+                <button type="button" class="btn btn-sm btn-warning" onclick="addvariants()">ADD </button>
+            </div>
+            `;
+            $(".card-body").append(inputField);
+
+        }
+        
+        // evaluating when submit button pressed
+        $("#click").click(function () {
+            let sum = 0;
+            let sumArr = [];
+            let nameArr = [];
+
+            $(".quantity").each(function () {
+                sum += +$(this).val();
+                sumArr.push(parseInt($(this).val()))
+            });
+            $(".titles").each(function(){
+                nameArr.push($(this).val())
+            })
+           
+            let newQtArr = sumArr.filter(num => !isNaN(num))
+            let newTitleArr = nameArr.filter(itm => itm)
+
+            // console.log(  newQtArr)
+            // console.log( newTitleArr)
+
+            let total = parseInt($(".total_quantity").val())
+
+            if (total >= sum) {
+                // ok
+                let html = ``;
+                for(let x=0;x<newQtArr.length;x++){
+                    html += `Item Name ${newTitleArr[x]} : ${newQtArr[x]} quantity </br>`
+                }
+                $(".print-data").html(html)
+            }
+            else if (isNaN(total)) {
+                $(".print-data").html("You can not empty available product")
+            } else {
+                $(".print-data").html("You Should Reduce Your Quantity")
+            }
+
+           
+        })
+       
+    </script>
+
+
+</body>
+
+</html>

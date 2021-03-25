@@ -32,12 +32,13 @@
                 <div class="card card-body">
                     First, Input positive quantity.Then add some variants with quantity.You can equal or less quantity.
                     <br>Perform basic validations.At first,hide variants input fields.When checked,it fade in.
+                    <br> Otherwise, take a button, when button clicks, generate two input field,taking name & quantity.
                     <br>Last prints data with variants.
                 </div>
             </div>
         </div>
         <!-- {{-- Product Variants --}} -->
-        <form action="" method="post" style="margin: 50px;">
+        <form action="" method="" style="margin: 50px;">
             <!-- {{-- Available Quantity --}} -->
 
             <div class="form-group row">
@@ -47,11 +48,10 @@
                 </div>
             </div>
 
-
-
             <div class="form-group m-form__group row">
                 <label class="col-xl-3 col-lg-3 col-form-label text-right">Different Sizes:</label>
-                <div class="col-xl-9 col-lg-9 justify-content-around">
+                <div class="col-xl-9 col-lg-9 justify-content-around variant-body">
+
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-sm-3">
                             <label class="checkbox">
@@ -105,7 +105,8 @@
                             </label>
                         </div>
 
-                        <h4><span class="badge bg-success" style="cursor: pointer" id="click">Add Quantity</span></h4>
+                        <h4><span class="badge bg-success my-2" style="cursor: pointer" id="click">Add Quantity</span>
+                        </h4>
                     </div>
                 </div>
             </div>
@@ -115,75 +116,77 @@
 
     </main><!-- /.container -->
     <!-- bs js -->
-    <script src="../assets/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="../assets/js/bootstrap.bundle.min.js"></script>
     <!-- jquery -->
     <script src="../assets/js/jQuery.js"></script>
 
     <script>
-    //  handling product variants
-     $(function(){
+       
+        //  handling product variants
+        $(function () {
 
-        $('.checkbox .form-control').hide();
+            $('.checkbox .form-control').hide();
 
-        //show it when the checkbox is clicked
-        $('.variants').on('click', function(){
-          let item = $(this).parent().parent().parent().find('.form-control');
-            if ( $(this).prop('checked') ) {
-               item.fadeIn();
-            } 
+            // show it when the checkbox is clicked
+            $('.variants').on('click', function () {
+                let item = $(this).parent().parent().parent().find('.form-control');
+                if ($(this).prop('checked')) {
+                    item.fadeIn();
+                }
 
-            else {
-                item.fadeOut();
-                item.val(0);
-            }
+                else {
+                    item.fadeOut();
+                    item.val(0);
+                }
+            });
+
+            $('#click').click(function () {
+
+                var val1 = $('#sm_input').val() > 0 ? $('#sm_input').val() : 0;
+                var val2 = $('#md_input').val() > 0 ? $('#md_input').val() : 0;
+                var val3 = $('#lg_input').val() > 0 ? $('#lg_input').val() : 0;
+                var val4 = $('#xl_input').val() > 0 ? $('#xl_input').val() : 0;
+
+                var sum = parseInt(val1) + parseInt(val2) + parseInt(val3) + parseInt(val4);
+                
+                var available_quantity = parseInt($(".quantity").val());
+                // console.log('s'+sum + " "+ available_quantity);
+                if (sum > available_quantity) {
+                    // can't add
+                    $(".btn-brand").prop('disabled', true);
+
+                    console.log("Reduce Quantity.You can only " + available_quantity + " products")
+                    $(".print-data").html("Reduce Quantity.You can only " + available_quantity + " products")
+                }
+                else if (sum <= available_quantity && available_quantity !== 0) {
+                    // add
+                    // grab .variants chekbox to determine wether checked or not
+                    let ck = $('.variants')
+                    $(".btn-brand").prop('disabled', false);
+                    val1 === 0 && ck[0].checked ? ck[0].checked = false : ''
+                    val2 === 0 && ck[1].checked ? ck[1].checked = false : ''
+                    val3 === 0 && ck[2].checked ? ck[2].checked = false : ''
+                    val4 === 0 && ck[3].checked ? ck[3].checked = false : ''
+
+                    // toastr.success("{!! 'All Set' !!}");
+                    // alert("All Set")
+                    // print data
+                    let printData = `<p>Available Quantity: ${available_quantity}</p>`
+                    printData += val1 ? `<p>Small Size: ${val1}</p>` : ''
+                    printData += val2 ? `<p>Medium Size: ${val2}</p>` : ''
+                    printData += val3 ? `<p>Large Size: ${val3}</p>` : ''
+                    printData += val4 ? `<p>ExtraLarge Size: ${val4}</p>` : ''
+                    $(".print-data").html(printData)
+                }
+                else {
+                    // toastr.warning("{!! 'You can not empty available product' !!}");
+                    alert("You can not empty available product")
+                    $(".print-data").html("You can not empty available product")
+                }
+            });
+
+
         });
-
-        $('#click').click(function () {
-
-            var val1 = $('#sm_input').val() > 0 ? $('#sm_input').val() : 0;
-            var val2 = $('#md_input').val() > 0 ? $('#md_input').val() : 0;
-            var val3 = $('#lg_input').val() > 0 ? $('#lg_input').val() : 0;
-            var val4 = $('#xl_input').val() > 0 ? $('#xl_input').val() : 0;
-            var sum = parseInt(val1) + parseInt(val2) + parseInt(val3) + parseInt(val4);
-            var available_quantity = parseInt($(".quantity").val()); 
-            // console.log('s'+sum + " "+ available_quantity);
-            if(sum > available_quantity){
-                // can't add
-                $(".btn-brand").prop('disabled', true);
-
-                console.log("Reduce Quantity.You can only "+ available_quantity +" products")
-                $(".print-data").html("Reduce Quantity.You can only "+ available_quantity +" products")
-                // toastr.warning("{!! 'Reduce Quantity.You can only "+ available_quantity +" products' !!}");
-            }
-            else if(sum <= available_quantity && available_quantity !== 0){
-                // add
-                // grab .variants chekbox to determine wether checked or not
-                let ck = $('.variants')
-                $(".btn-brand").prop('disabled', false);
-                val1 === 0 && ck[0].checked ? ck[0].checked = false : ''
-                val2 === 0 && ck[1].checked ? ck[1].checked = false : ''
-                val3 === 0 && ck[2].checked ? ck[2].checked = false : ''
-                val4 === 0 && ck[3].checked ? ck[3].checked = false : ''
-
-                // toastr.success("{!! 'All Set' !!}");
-                // alert("All Set")
-                // print data
-                let printData = `<p>Available Quantity: ${available_quantity}</p>`
-                printData += val1 ?  `<p>Small Size: ${val1}</p>`:''
-                printData += val2 ?  `<p>Medium Size: ${val2}</p>`:''
-                printData += val3 ?  `<p>Large Size: ${val3}</p>`:''
-                printData += val4 ?  `<p>ExtraLarge Size: ${val4}</p>`:''
-                $(".print-data").html(printData)
-            }
-            else{
-                // toastr.warning("{!! 'You can not empty available product' !!}");
-                alert("You can not empty available product")
-                $(".print-data").html("You can not empty available product")
-            }
-        });
-        
-
-    })
 
     </script>
 
