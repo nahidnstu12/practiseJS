@@ -229,11 +229,12 @@ li a {
 // sells section
 .sells-section{
   background: $header-background;
-  min-height: 402px;
+  min-height: 802px;
   .flash-sells{
     position: relative;
     height: 362px;
     display: flex;
+    margin-bottom: 35px;
     // justify-content: space-between;
 
     .flash-timer{     
@@ -255,6 +256,7 @@ li a {
       }
       .text-two{
         @include font-styles($font-size:13px,$line-height:16px);
+        
         margin-bottom: 20px;
         margin-top: 4px;
       }
@@ -262,9 +264,9 @@ li a {
         .time{
           @include font-styles($font-size:18px,$line-height:24px);
          
-        background: $timer-count-color;
-        border-radius: 5px;
-        padding: 7px;
+          background: $timer-count-color;
+          border-radius: 5px;
+          padding: 7px;
         }
         .split{
           @include font-styles($font-size:20px,$line-height:24px);
@@ -305,34 +307,61 @@ li a {
     .product-card{
       width: 294px;
       height: 362px;
-      // margin-top: 18px;
       margin: 9px 20px 18px 0px;
-      background: #FFFFFF;
+      background: $text-white-color;
       border-radius: 5px;
-      .product-img{
-        width: 100%;
-        height: 70%;
-      }
+      padding: 7px;
+
+        .img-overlay{
+          position: relative;
+
+          .product-img{
+            width: 100%;
+            height: 258px;
+          }
+            
+          .free-shipping{
+            @include position($position:absolute,$bottom:4px,$right:0px);
+            @include display-flex($justify:space-around);
+
+            width: 146px;
+            height: 39.26px;
+            background: $count-color;
+            border-radius: 5px 0px;
+            color: $text-white-color;
+            padding: 8px;
+
+            .free-shipping-bus{
+              width: 19px;
+            }
+
+            .text-one{
+              @include font-styles($font-size:13px,$line-height:15px);
+            
+            }
+          
+          }
+        }
+
       .product-info{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include display-flex($justify:space-between);
+        
         margin-top: 16px;
         margin-left: 16px;
        
         .name{
           @include font-styles($font-size:16px,$line-height:20px,$font-weight:600);
+
           margin-bottom: 6px;
         }
         .price{
           @include font-styles($font-size:20px,$line-height:24px);
         }
         .strike-price{
-          color: #919191;
+          color: $strike-price-color;
           @include font-styles($font-size:12px,$line-height:15px);
         }
       
-        
       }
       .actions{
         @include display-flex;
@@ -343,23 +372,20 @@ li a {
         }
       }
     }
+    
     .linear-scroll{
-      position: absolute;
-width: 55px;
-height: 55px;
-right: 6px;
-top: 150px;
-border-radius: 50%;
-background: #FFFFFF;
-
-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-.arrow{
-    color: #0D5054;
-    position: absolute;
-    top: 30%;
-    left: 37%;
-
-}
+      @include position($position:absolute,$right:6px,$top:150px);
+  
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: $text-white-color;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+      .arrow{
+        @include position($position:absolute,$left:37%,$top:30%);
+        color: $arrow-color;
+          
+      }
     }
   }
 }
