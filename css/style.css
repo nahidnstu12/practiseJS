@@ -293,7 +293,7 @@ li a {
   font-weight: 500;
   font-size: 18px;
   line-height: 24px;
-  background: #B2FCED;
+  background: #b2fced;
   border-radius: 5px;
   padding: 7px;
 }
@@ -427,5 +427,146 @@ li a {
   position: absolute;
   top: 30%;
   left: 37%;
-  color: #0D5054;
+  color: #0d5054;
+}
+
+footer {
+  height: 525px;
+  background: #1C1C1C;
+  color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1.52fr;
+  position: relative;
+}
+footer .left {
+  display: grid;
+  align-items: center;
+  margin-left: 102px;
+}
+footer .left h3 {
+  padding: 2px;
+  margin-top: 63px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 47px;
+  color: #E3E3E3;
+}
+footer .left p {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 21px;
+  margin-right: 80px;
+  color: #afafaf;
+}
+footer .left .social-icons {
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+footer .left .social-icons img {
+  margin: 0 11px;
+}
+footer .left .social-icons img:first-child {
+  margin: 0;
+}
+footer .left .get-app {
+  display: flex;
+  margin-bottom: 90px;
+}
+footer .left .get-app img {
+  width: 107px;
+  height: 107px;
+  border-radius: 5px;
+  margin-right: 18px;
+}
+footer .left .get-app-info {
+  display: flex;
+  align-items: center;
+}
+footer .left .get-app-info h4 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+footer .left .get-app-info img {
+  width: 27px;
+  height: 27px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+footer .left .get-app-info .app-text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 8px;
+  line-height: 9px;
+  color: #B1B1B1;
+}
+footer .left .get-app-info .app-text span {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  color: #B1B1B1;
+}
+footer .right {
+  margin-top: 96px;
+  margin-left: 93px;
+}
+footer .right .top-footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 50px;
+}
+footer .right .top-footer ul {
+  list-style: none;
+}
+footer .right .top-footer ul li a {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #afafaf;
+}
+footer .right .top-footer ul .first-text {
+  font-size: 24px;
+  line-height: 21px;
+  font-weight: 500;
+  color: #E3E3E3;
+}
+footer .right .top-footer ul li:first-child {
+  margin-bottom: 4px;
+}
+footer .right .bottom-footer h3 {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 23px;
+}
+footer .right .bottom-footer .payment {
+  width: 48px;
+  height: 30px;
+  background: #E3E3E3;
+  border-radius: 5px;
+  padding: 6px;
+  object-fit: contain;
+  margin-bottom: 30px;
+  margin-top: 4px;
+}
+footer .line {
+  position: absolute;
+  width: 393px;
+  height: 0px;
+  left: 396px;
+  top: 272px;
+  border: 1.5px solid rgba(227, 227, 227, 0.78);
+  transform: rotate(90.15deg);
 }

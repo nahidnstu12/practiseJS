@@ -83,7 +83,7 @@ li a {
         height: 36px;
         color: $text-white-color;
         font-size: 15px;
-        background: $brand-btn-color;
+        background: $btn-color;
         border-radius: 5px 0px 0px 5px;
         padding: 18px;
         border: none;
@@ -149,7 +149,7 @@ li a {
         height: 15px;
         text-align: center;
         border-radius: 50%;
-        border: 8px solid #{$count-color};
+        border: 8px solid #{$brand-color};
         color: $text-white-color;
       }
     }
@@ -165,8 +165,9 @@ li a {
         width: 20px;
         height: 15px;
         border-radius: 50%;
-        border: 8px solid #{$count-color};
+        border: 8px solid #{$brand-color};
         color: $text-white-color;
+        // @extend .wish-count;
       }
     }
     .item a {
@@ -277,7 +278,7 @@ li a {
         margin-top: 15px;
         margin-left: 12px;
         padding: 7px;
-        background: $count-color;
+        background: $brand-color;
         border-radius: 8px;
         color: $text-white-color;
       }
@@ -326,7 +327,7 @@ li a {
 
             width: 146px;
             height: 39.26px;
-            background: $count-color;
+            background: $brand-color;
             border-radius: 5px 0px;
             color: $text-white-color;
             padding: 8px;
@@ -387,6 +388,165 @@ li a {
           
       }
     }
+  }
+}
+
+// footer
+footer{
+  height: 525px;
+  background: #1C1C1C;
+  color: $text-white-color;
+  display: grid;
+  grid-template-columns: 1fr 1.52fr;
+  position: relative;
+
+  .left{
+    display: grid;
+    align-items: center;
+    margin-left: 102px;
+    h3{
+      padding: 2px;
+      margin-top: 63px;
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 40px;
+      line-height: 47px;
+      color: #E3E3E3;
+    }
+    p{
+      font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 21px;
+    margin-right: 80px;
+    color: #afafaf;
+    }
+    .social-icons{
+      margin-top: 20px;
+      margin-bottom: 25px;
+    
+       img{
+        
+        margin: 0 11px;
+
+          &:first-child{
+            margin: 0;
+          }
+      }
+    }
+    .get-app{
+      display: flex;
+      margin-bottom: 90px;
+      img{
+        width: 107px;
+        height: 107px;
+        border-radius: 5px;
+        margin-right: 18px;
+      }
+      &-info{
+        display: flex;
+        align-items: center;
+        h4{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 20px;
+          line-height: 23px;
+        }
+        img{
+          width: 27px;
+          height: 27px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .app-text{
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 8px;
+          line-height: 9px;
+          color: #B1B1B1;
+          span{
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 14px;
+            color: #B1B1B1;
+          }
+        }
+      }
+    }
+    
+
+  }
+
+  .right{
+    // display: grid;
+    margin-top: 96px;
+    margin-left: 93px;
+    .top-footer{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-bottom: 50px;
+
+      ul{
+        list-style: none;
+        
+        li a{
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 24px;
+          color: #afafaf;
+          
+        }
+
+        .first-text{
+          font-size: 24px;
+          line-height: 21px;
+          font-weight: 500;
+          color: #E3E3E3;
+        }
+        li:first-child{
+          margin-bottom: 4px;
+        }
+      }
+      
+    }
+
+    .bottom-footer{
+      h3{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+      }
+      .payment{
+        width: 48px;
+        height: 30px;
+        background: #E3E3E3;
+        border-radius: 5px;
+        padding: 6px;
+        object-fit: contain;
+        margin-bottom: 30px;
+        margin-top: 4px;
+      }
+    }
+  }
+  .line{
+    position: absolute;
+    width: 393px;
+    height: 0px;
+    left: 396px;
+    top: 272px;
+
+    border: 1.5px solid rgba(227, 227, 227, 0.78);
+    transform: rotate(90.15deg);
   }
 }
 
