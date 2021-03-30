@@ -1,6 +1,6 @@
 // mixins
-@mixin font-styles($font-weight:500,$font-size:30px,$line-height:47px) {
-    font-family: $font-montserrat;
+@mixin font-styles($font-family:'Montserrat',$font-weight:500,$font-size:30px,$line-height:47px) {
+    font-family: $font-family;
     font-style: normal;
     font-weight: $font-weight;
     font-size: $font-size;

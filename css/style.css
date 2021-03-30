@@ -6,7 +6,6 @@
 
 body {
   font-family: "Montserrat", "Roboto";
-  height: 5107px;
 }
 
 li a {
@@ -444,19 +443,19 @@ footer .left {
   margin-left: 102px;
 }
 footer .left h3 {
-  padding: 2px;
-  margin-top: 63px;
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
   line-height: 47px;
+  padding: 2px;
+  margin-top: 63px;
   color: #E3E3E3;
 }
 footer .left p {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 15px;
   line-height: 21px;
   margin-right: 80px;
@@ -487,7 +486,7 @@ footer .left .get-app-info {
   align-items: center;
 }
 footer .left .get-app-info h4 {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -500,20 +499,20 @@ footer .left .get-app-info img {
   margin-bottom: 10px;
 }
 footer .left .get-app-info .app-text {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 8px;
   line-height: 9px;
-  color: #B1B1B1;
+  color: #afafaf;
 }
 footer .left .get-app-info .app-text span {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
-  color: #B1B1B1;
+  color: #afafaf;
 }
 footer .right {
   margin-top: 96px;
@@ -536,30 +535,33 @@ footer .right .top-footer ul li a {
   color: #afafaf;
 }
 footer .right .top-footer ul .first-text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
   font-size: 24px;
   line-height: 21px;
-  font-weight: 500;
   color: #E3E3E3;
 }
 footer .right .top-footer ul li:first-child {
   margin-bottom: 4px;
 }
 footer .right .bottom-footer h3 {
-  font-family: Roboto;
+  font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 23px;
 }
 footer .right .bottom-footer .payment {
-  width: 48px;
-  height: 30px;
+  width: 74px;
+  height: 38px;
   background: #E3E3E3;
   border-radius: 5px;
-  padding: 6px;
+  padding: 5px 9px;
   object-fit: contain;
   margin-bottom: 30px;
   margin-top: 4px;
+  margin-right: 8px;
 }
 footer .line {
   position: absolute;
@@ -567,6 +569,6 @@ footer .line {
   height: 0px;
   left: 396px;
   top: 272px;
-  border: 1.5px solid rgba(227, 227, 227, 0.78);
+  border: 0.5px solid rgba(227, 227, 227, 0.78);
   transform: rotate(90.15deg);
 }

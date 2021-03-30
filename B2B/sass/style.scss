@@ -8,9 +8,9 @@
 }
 
 body {
-  font-family: $font-family;
+  font-family: $font-familys;
   // width: 1440px;
-  height: 5107px; 
+  // height: 5107px; 
 }
 li a {
   text-decoration: none;
@@ -394,7 +394,7 @@ li a {
 // footer
 footer{
   height: 525px;
-  background: #1C1C1C;
+  background: $footer-bg;
   color: $text-white-color;
   display: grid;
   grid-template-columns: 1fr 1.52fr;
@@ -404,24 +404,19 @@ footer{
     display: grid;
     align-items: center;
     margin-left: 102px;
+
     h3{
+      @include font-styles($font-family:'Roboto',$font-size:40px);
       padding: 2px;
       margin-top: 63px;
-      font-family: Roboto;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 40px;
-      line-height: 47px;
-      color: #E3E3E3;
+      color: $footer-text-color;
     }
+
     p{
-      font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 15px;
-    line-height: 21px;
-    margin-right: 80px;
-    color: #afafaf;
+      @include font-styles($font-family:'Roboto',$font-size:15px,$line-height:21px);
+   
+      margin-right: 80px;
+      color: $footer-light-text-color;
     }
     .social-icons{
       margin-top: 20px;
@@ -449,11 +444,8 @@ footer{
         display: flex;
         align-items: center;
         h4{
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 20px;
-          line-height: 23px;
+          @include font-styles($font-family:'Roboto',$font-size:20px,$line-height:23px);
+         
         }
         img{
           width: 27px;
@@ -462,19 +454,13 @@ footer{
           margin-bottom: 10px;
         }
         .app-text{
-          font-family: Roboto;
-          font-style: normal;
-          font-weight: 500;
-          font-size: 8px;
-          line-height: 9px;
-          color: #B1B1B1;
+          @include font-styles($font-family:'Roboto',$font-size:8px,$line-height:9px);
+         
+          color: $footer-light-text-color;
           span{
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 12px;
-            line-height: 14px;
-            color: #B1B1B1;
+            @include font-styles($font-family:'Roboto',$font-size:12px,$line-height:14px);
+           
+            color: $footer-light-text-color;
           }
         }
       }
@@ -496,20 +482,16 @@ footer{
         list-style: none;
         
         li a{
-          font-family: 'Roboto';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 16px;
-          line-height: 24px;
-          color: #afafaf;
+          @include font-styles($font-family:'Roboto',$font-size:16px,$line-height:24px);
+          
+          color: $footer-light-text-color;
           
         }
 
         .first-text{
-          font-size: 24px;
-          line-height: 21px;
-          font-weight: 500;
-          color: #E3E3E3;
+          @include font-styles($font-family:'Roboto',$font-size:24px,$line-height:21px);
+          
+          color: $footer-text-color;
         }
         li:first-child{
           margin-bottom: 4px;
@@ -520,21 +502,19 @@ footer{
 
     .bottom-footer{
       h3{
-        font-family: Roboto;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
-        line-height: 23px;
+        @include font-styles($font-family:'Roboto',$font-size:20px,$line-height:23px);
+        
       }
       .payment{
-        width: 48px;
-        height: 30px;
-        background: #E3E3E3;
+        width: 74px;
+        height: 38px;
+        background: $footer-text-color;
         border-radius: 5px;
-        padding: 6px;
+        padding: 5px 9px;
         object-fit: contain;
         margin-bottom: 30px;
         margin-top: 4px;
+        margin-right: 8px;
       }
     }
   }
@@ -545,7 +525,7 @@ footer{
     left: 396px;
     top: 272px;
 
-    border: 1.5px solid rgba(227, 227, 227, 0.78);
+    border: 0.5px solid rgba(227, 227, 227, 0.78);
     transform: rotate(90.15deg);
   }
 }
