@@ -8,9 +8,9 @@
 }
 
 body {
-  font-family: $font-family;
+  font-family: $font-montserrat;
   // width: 1440px;
-  height: 5107px; 
+  // height: 5107px; 
 }
 li a {
   text-decoration: none;
@@ -44,6 +44,7 @@ li a {
 
 .main-nav {
   @include display-flex($justify: space-between);
+  font-family: $font-montserrat;
   background-color: $text-white-color;
   width: 100%;
   height: 69px;
@@ -83,7 +84,7 @@ li a {
         height: 36px;
         color: $text-white-color;
         font-size: 15px;
-        background: $brand-btn-color;
+        background: $btn-color;
         border-radius: 5px 0px 0px 5px;
         padding: 18px;
         border: none;
@@ -141,16 +142,7 @@ li a {
       }
 
       .wish-count {
-        @include position($left:-10px,$top:-10px);
-        @include font-styles($font-size: 13px, $line-height: 12px);
-        @include display-flex();
-
-        width: 20px;
-        height: 15px;
-        text-align: center;
-        border-radius: 50%;
-        border: 8px solid #{$count-color};
-        color: $text-white-color;
+        @extend %count-style;
       }
     }
     .cart {
@@ -158,15 +150,7 @@ li a {
       align-items: center;
 
       .cart-count {
-        @include position($left:-8px,$top:-8px);
-        @include font-styles($font-size: 13px, $line-height: 12px);
-        @include display-flex();
-
-        width: 20px;
-        height: 15px;
-        border-radius: 50%;
-        border: 8px solid #{$count-color};
-        color: $text-white-color;
+        @extend %count-style;
       }
     }
     .item a {
@@ -229,11 +213,12 @@ li a {
 // sells section
 .sells-section{
   background: $header-background;
-  min-height: 402px;
+  min-height: 802px;
   .flash-sells{
     position: relative;
     height: 362px;
     display: flex;
+    margin-bottom: 35px;
     // justify-content: space-between;
 
     .flash-timer{     
@@ -255,6 +240,7 @@ li a {
       }
       .text-two{
         @include font-styles($font-size:13px,$line-height:16px);
+        
         margin-bottom: 20px;
         margin-top: 4px;
       }
@@ -262,9 +248,9 @@ li a {
         .time{
           @include font-styles($font-size:18px,$line-height:24px);
          
-        background: $timer-count-color;
-        border-radius: 5px;
-        padding: 7px;
+          background: $timer-count-color;
+          border-radius: 5px;
+          padding: 7px;
         }
         .split{
           @include font-styles($font-size:20px,$line-height:24px);
@@ -275,7 +261,7 @@ li a {
         margin-top: 15px;
         margin-left: 12px;
         padding: 7px;
-        background: $count-color;
+        background: $brand-color;
         border-radius: 8px;
         color: $text-white-color;
       }
@@ -305,34 +291,61 @@ li a {
     .product-card{
       width: 294px;
       height: 362px;
-      // margin-top: 18px;
       margin: 9px 20px 18px 0px;
-      background: #FFFFFF;
+      background: $text-white-color;
       border-radius: 5px;
-      .product-img{
-        width: 100%;
-        height: 70%;
-      }
+      padding: 7px;
+
+        .img-overlay{
+          position: relative;
+
+          .product-img{
+            width: 100%;
+            height: 258px;
+          }
+            
+          .free-shipping{
+            @include position($position:absolute,$bottom:4px,$right:0px);
+            @include display-flex($justify:space-around);
+
+            width: 146px;
+            height: 39.26px;
+            background: $brand-color;
+            border-radius: 5px 0px;
+            color: $text-white-color;
+            padding: 8px;
+
+            .free-shipping-bus{
+              width: 19px;
+            }
+
+            .text-one{
+              @include font-styles($font-size:13px,$line-height:15px);
+            
+            }
+          
+          }
+        }
+
       .product-info{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include display-flex($justify:space-between);
+        
         margin-top: 16px;
         margin-left: 16px;
        
         .name{
           @include font-styles($font-size:16px,$line-height:20px,$font-weight:600);
+
           margin-bottom: 6px;
         }
         .price{
           @include font-styles($font-size:20px,$line-height:24px);
         }
         .strike-price{
-          color: #919191;
+          color: $strike-price-color;
           @include font-styles($font-size:12px,$line-height:15px);
         }
       
-        
       }
       .actions{
         @include display-flex;
@@ -343,24 +356,161 @@ li a {
         }
       }
     }
+    
     .linear-scroll{
-      position: absolute;
-width: 55px;
-height: 55px;
-right: 6px;
-top: 150px;
-border-radius: 50%;
-background: #FFFFFF;
-
-box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-.arrow{
-    color: #0D5054;
-    position: absolute;
-    top: 30%;
-    left: 37%;
-
-}
+      @include position($position:absolute,$right:6px,$top:150px);
+  
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background: $text-white-color;
+      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+      .arrow{
+        @include position($position:absolute,$left:37%,$top:30%);
+        color: $arrow-color;
+          
+      }
     }
+  }
+}
+
+// footer
+footer{
+  height: 525px;
+  background: $footer-bg;
+  color: $text-white-color;
+  display: grid;
+  grid-template-columns: 1fr 1.52fr;
+  position: relative;
+  font-family: $font-roboto;
+
+  .left{
+    display: grid;
+    align-items: center;
+    margin-left: 102px;
+
+    h3{
+      @include font-styles($font-size:40px);
+      padding: 2px;
+      margin-top: 63px;
+      color: $footer-text-color;
+    }
+
+    p{
+      @include font-styles($font-size:15px,$line-height:21px);
+   
+      margin-right: 80px;
+      color: $footer-light-text-color;
+    }
+    .social-icons{
+      margin-top: 20px;
+      margin-bottom: 25px;
+    
+       img{
+        
+        margin: 0 11px;
+
+          &:first-child{
+            margin: 0;
+          }
+      }
+    }
+    .get-app{
+      display: flex;
+      margin-bottom: 90px;
+      img{
+        width: 107px;
+        height: 107px;
+        border-radius: 5px;
+        margin-right: 18px;
+      }
+      &-info{
+        display: flex;
+        align-items: center;
+        h4{
+          @include font-styles($font-size:20px,$line-height:23px);
+         
+        }
+        img{
+          width: 27px;
+          height: 27px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        .app-text{
+          @include font-styles($font-size:8px,$line-height:9px);
+         
+          color: $footer-light-text-color;
+          span{
+            @include font-styles($font-size:12px,$line-height:14px);
+           
+            color: $footer-light-text-color;
+          }
+        }
+      }
+    }
+    
+
+  }
+
+  .right{
+    // display: grid;
+    margin-top: 96px;
+    margin-left: 93px;
+    .top-footer{
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      margin-bottom: 50px;
+
+      ul{
+        list-style: none;
+        
+        li a{
+          @include font-styles($font-size:16px,$line-height:24px);
+          
+          color: $footer-light-text-color;
+          
+        }
+
+        .first-text{
+          @include font-styles($font-size:24px,$line-height:21px);
+          
+          color: $footer-text-color;
+        }
+        li:first-child{
+          margin-bottom: 4px;
+        }
+      }
+      
+    }
+
+    .bottom-footer{
+      h3{
+        @include font-styles($font-size:20px,$line-height:23px);
+        
+      }
+      .payment{
+        width: 74px;
+        height: 38px;
+        background: $footer-text-color;
+        border-radius: 5px;
+        padding: 5px 9px;
+        object-fit: contain;
+        margin-bottom: 30px;
+        margin-top: 4px;
+        margin-right: 8px;
+      }
+    }
+  }
+  .line{
+    position: absolute;
+    width: 393px;
+    height: 0px;
+    left: 396px;
+    top: 272px;
+
+    border: 0.5px solid rgba(227, 227, 227, 0.78);
+    transform: rotate(90.15deg);
   }
 }
 
