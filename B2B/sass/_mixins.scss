@@ -1,7 +1,14 @@
 // mixins
-@mixin font-styles($font-family:'Montserrat',$font-weight:500,$font-size:30px,$line-height:47px) {
-    font-family: $font-family;
-    font-style: normal;
+// @mixin font-styles($font-family:'Montserrat',$font-weight:500,$font-size:30px,$line-height:47px) {
+//     // font-family: $font-family;
+//     font-style: normal;
+//     font-weight: $font-weight;
+//     font-size: $font-size;
+//     line-height: $line-height;
+// }
+@mixin font-styles($font-weight:500,$font-size:30px,$line-height:47px) {
+    // font-family: $font-family;
+    // font-style: normal;
     font-weight: $font-weight;
     font-size: $font-size;
     line-height: $line-height;
@@ -20,5 +27,19 @@
     right: $right;
     bottom: $bottom;
 
+}
+
+// placeholder
+%count-style{
+    @include position($left:-10px,$top:-10px);
+    @include font-styles($font-size: 13px, $line-height: 12px);
+    @include display-flex();
+
+    width: 20px;
+    height: 15px;
+    text-align: center;
+    border-radius: 50%;
+    border: 8px solid #{$brand-color};
+    color: $text-white-color;
 }
 
