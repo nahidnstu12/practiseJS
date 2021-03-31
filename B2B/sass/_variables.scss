@@ -1,7 +1,7 @@
 // font-family
 $font-familys: 'Montserrat', 'Roboto';
-$font-montserrat: 'Montserrat';
-$font-roboto : 'Roboto';
+$font-montserrat: 'Montserrat',sans-serif;
+$font-roboto : 'Roboto' ,sans-serif;
 
 // colors
 $header-background: #f4f4f4;
@@ -16,3 +16,4 @@ $strike-price-color:#919191;
 $footer-bg: #1C1C1C;
 $footer-text-color: #E3E3E3;
 $footer-light-text-color: #afafaf;
+$copyright-bg : #111111;
