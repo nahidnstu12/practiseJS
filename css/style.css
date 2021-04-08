@@ -16,6 +16,53 @@
   color: #ffffff;
 }
 
+.shop-now-button, .view-all-button, .shop-more-button, .free-shipping {
+  margin-top: 15px;
+  background: #08bd99;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+}
+
+.free-shipping {
+  position: absolute;
+  right: 0px;
+  bottom: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 146px;
+  height: 39.26px;
+}
+.free-shipping .free-shipping-bus {
+  width: 19px;
+}
+.free-shipping .text-one {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 15px;
+}
+
+.view-all-button {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 7px 23px;
+  outline: none;
+  z-index: 99;
+}
+
+.shop-now-button {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  width: 212px;
+  height: 42px;
+  outline: none;
+  margin-left: 260px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -268,21 +315,6 @@ li a {
   font-size: 20px;
   line-height: 24px;
 }
-.sells-section .flash-sells .flash-timer .shop-more-button {
-  margin-top: 15px;
-  margin-left: 12px;
-  padding: 7px;
-  background: #08bd99;
-  border-radius: 8px;
-  color: #ffffff;
-}
-.sells-section .flash-sells .flash-timer .view-button {
-  margin-top: 15px;
-  padding: 7px 23px;
-  background: #08bd99;
-  border-radius: 4px;
-  color: #ffffff;
-}
 .sells-section .flash-sells .flash-timer .shadow-3 {
   position: absolute;
   top: -3px;
@@ -319,28 +351,6 @@ li a {
 .sells-section .flash-sells .product-card .img-overlay .product-img {
   width: 100%;
   height: 258px;
-}
-.sells-section .flash-sells .product-card .img-overlay .free-shipping {
-  position: absolute;
-  right: 0px;
-  bottom: 4px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 146px;
-  height: 39.26px;
-  background: #08bd99;
-  border-radius: 5px 0px;
-  color: #ffffff;
-  padding: 8px;
-}
-.sells-section .flash-sells .product-card .img-overlay .free-shipping .free-shipping-bus {
-  width: 19px;
-}
-.sells-section .flash-sells .product-card .img-overlay .free-shipping .text-one {
-  font-weight: 500;
-  font-size: 13px;
-  line-height: 15px;
 }
 .sells-section .flash-sells .product-card .product-info {
   display: flex;
@@ -448,19 +458,6 @@ li a {
   line-height: 24px;
   text-align: right;
   color: #0D5054;
-}
-.mall .top .carrousal .offer-box .offer-btn {
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 24px;
-  background: #08bd99;
-  border-radius: 5px;
-  color: #ffffff;
-  width: 212px;
-  height: 42px;
-  outline: none;
-  margin-top: 12px;
-  margin-left: 260px;
 }
 .mall .middle {
   display: flex;
@@ -623,18 +620,6 @@ li a {
   font-size: 30px;
   line-height: 12px;
   margin-bottom: 12px;
-}
-.collection .top-view .view-button {
-  font-weight: 500;
-  font-size: 15px;
-  line-height: 18px;
-  margin-top: 15px;
-  padding: 7px 23px;
-  background: #08bd99;
-  border-radius: 4px;
-  color: #ffffff;
-  outline: none;
-  z-index: 99;
 }
 .collection-grid {
   display: grid;

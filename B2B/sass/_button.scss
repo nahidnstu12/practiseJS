@@ -1,0 +1,49 @@
+%button{
+    margin-top: 15px;
+    // margin-left: 12px;  
+    background: $brand-color;
+    color: $text-white-color;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+
+.free-shipping{
+    @extend %button;
+    @include position($position:absolute,$bottom:4px,$right:0px);
+    @include display-flex($justify:space-around);
+
+    width: 146px;
+    height: 39.26px;
+    
+    .free-shipping-bus{
+      width: 19px;
+    }
+
+    .text-one{
+      @include font-styles($font-size:13px,$line-height:15px);
+    
+    }
+}
+
+.shop-more-button{
+    @extend %button;
+}
+
+.view-all-button{
+    @extend %button;
+    @include font-styles($font-size:15px,$line-height:18px);
+    padding: 7px 23px;
+    outline: none;
+    z-index: 99;
+}
+.shop-now-button{
+    @extend %button;
+    @include font-styles($font-size:20px,$line-height:24px);
+    
+    width: 212px;
+    height: 42px;
+    outline: none;
+    margin-left: 260px;
+}

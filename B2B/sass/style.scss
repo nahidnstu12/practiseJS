@@ -1,5 +1,6 @@
 @import 'variables';
 @import 'mixins';
+@import 'button';
 
 * {
   margin: 0;
@@ -258,22 +259,7 @@ li a {
           
         }
       }
-      .shop-more-button{
-        margin-top: 15px;
-        margin-left: 12px;
-        padding: 7px;
-        background: $brand-color;
-        border-radius: 8px;
-        color: $text-white-color;
-      }
-      .view-button{
-        margin-top: 15px;
-        // margin-left: 12px;
-        padding: 7px 23px;
-        background: $brand-color;
-        border-radius: 4px;
-        color: $text-white-color;
-      }
+      
 
       .shadow-3{
         @include position($position:absolute,$top:-3px,$right:-5px);
@@ -313,27 +299,6 @@ li a {
             height: 258px;
           }
             
-          .free-shipping{
-            @include position($position:absolute,$bottom:4px,$right:0px);
-            @include display-flex($justify:space-around);
-
-            width: 146px;
-            height: 39.26px;
-            background: $brand-color;
-            border-radius: 5px 0px;
-            color: $text-white-color;
-            padding: 8px;
-
-            .free-shipping-bus{
-              width: 19px;
-            }
-
-            .text-one{
-              @include font-styles($font-size:13px,$line-height:15px);
-            
-            }
-          
-          }
         }
 
       .product-info{
@@ -435,17 +400,6 @@ li a {
           text-align: right;
           color: $text-green-color;
           }
-          .offer-btn{
-            @include font-styles($font-size:20px,$line-height:24px);
-          background: $brand-color;
-          border-radius: 5px;
-          color: $text-white-color;
-          width: 212px;
-          height: 42px;
-          outline: none;
-          margin-top: 12px;
-          margin-left: 260px;
-        }
       }
       }
 
@@ -598,18 +552,7 @@ li a {
      
       margin-bottom: 12px;
     }
-    .view-button{
-      @include font-styles($font-size:15px,$line-height:18px);
-      margin-top: 15px;
-      padding: 7px 23px;
-      background: $brand-color;
-      border-radius: 4px;
-      color: $text-white-color;
-      outline: none;
-      z-index: 99;
-     
-
-    }
+    
   }
  
   &-grid{
