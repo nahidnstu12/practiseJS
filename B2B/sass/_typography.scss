@@ -1,0 +1,77 @@
+// @mixin text-one() {
+    
+// }
+// %text{
+//     @include font-styles($font-size:18px,$line-height:21px);
+// }
+// .service-text {
+//     @include font-styles($font-size: 15px, $line-height: 18px);
+//   }
+// .name{
+//     @include font-styles($font-size:16px,$line-height:20px,$font-weight:600);
+// .offer-text{
+//     @include font-styles($font-size:20px,$line-height:24px);
+    
+//     text-align: right;
+//     color: $text-green-color;
+//     }
+//     margin-bottom: 6px;
+//   }
+//   .price{
+//     @include font-styles($font-size:20px,$line-height:24px);
+//   }
+//   .strike-price{
+//     color: $strike-price-color;
+//     @include font-styles($font-size:12px,$line-height:15px);
+//   }
+// .text-one{
+//     @include font-styles($font-weight:600,$font-size:18px,$line-height:21px);
+
+//     margin-top: 2px;
+
+//   }
+//   .text-one{
+//     @include font-styles($font-size:35px,$line-height:43px);
+//     margin: 0 18px;
+    
+//   }
+//   .text-one{
+//     @include font-styles($font-size:25px,$line-height:30px);
+    
+//     margin-right: 123px;
+//     margin-top: -140px;
+//   }
+//   .text-one{
+//     @include font-styles($font-size:30px,$line-height:12px);
+   
+//     margin-bottom: 12px;
+//   }
+//   .text-two{
+//     @include font-styles($font-size:13px,$line-height:16px);
+    
+//     margin-bottom: 20px;
+//     margin-top: 4px;
+//   }
+//   .text-two{
+//     @include font-styles($font-size:50px,$line-height:61px);
+   
+//     color: $text-red-color;
+//   }
+//   .text-two{
+//     @include font-styles($font-size:25px,$line-height:30px);
+    
+//   }
+//   .text-three{
+//     @include font-styles($font-size:25px,$line-height:30px);
+    
+//     margin-left: 96px;
+//   }
+//   .text-three{
+//     @include font-styles($font-size:12px,$line-height:15px);
+    
+//   }
+//   .text-four{
+//     @include font-styles($font-size:20px,$line-height:24px);
+//     @include position($position:absolute,$bottom:19px,$left:110px);
+    
+//   }

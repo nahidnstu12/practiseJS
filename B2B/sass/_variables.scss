@@ -1,13 +1,15 @@
 // font-family
 $font-familys: 'Montserrat', 'Roboto';
-$font-montserrat: 'Montserrat';
-$font-roboto : 'Roboto';
+$font-montserrat: 'Montserrat',sans-serif;
+$font-roboto : 'Roboto' ,sans-serif;
 
 // colors
 $header-background: #f4f4f4;
 $text-white-color: #ffffff;
 $text-black-color: #000000;
 $text-link-color: #706f6f;
+$text-red-color: #EB001B;
+$text-green-color:#0D5054;
 $btn-color: #636363;
 $brand-color: #08bd99;
 $timer-count-color: #b2fced;
@@ -16,3 +18,4 @@ $strike-price-color:#919191;
 $footer-bg: #1C1C1C;
 $footer-text-color: #E3E3E3;
 $footer-light-text-color: #afafaf;
+$copyright-bg : #111111;

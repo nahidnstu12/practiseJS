@@ -1,5 +1,7 @@
 @import 'variables';
 @import 'mixins';
+@import 'button';
+@import 'linear-scroll';
 
 * {
   margin: 0;
@@ -9,6 +11,7 @@
 
 body {
   font-family: $font-montserrat;
+  background: $header-background;
   // width: 1440px;
   // height: 5107px; 
 }
@@ -35,7 +38,7 @@ li a {
       position: relative;
       margin: 0 20px;
       font-size: 14px;
-      line-height: 17px;
+      // line-height: 17px;
     }
   }
 }
@@ -62,12 +65,13 @@ li a {
     .item .hotline-section {
       display: flex;
       .hotline {
-        @include font-styles($font-size: 15px, $line-height: 18px);
+        @include font-styles($font-size: 15px);
         color: $text-black-color;
-        margin-left: 4px;
+        margin-left: 5px;
+        margin-top: 2px;
 
         .hot-number {
-          @include font-styles($font-size: 10px, $line-height: 12px);
+          @include font-styles($font-size: 10px);
         }
       }
     }
@@ -79,7 +83,7 @@ li a {
       width: 420px;
       .brand-btn {
         @include display-flex();
-        @include position($left:3px,$top:0);
+        @include position($position:relative,$left:3px,$top:0);
         width: 146px;
         height: 36px;
         color: $text-white-color;
@@ -115,7 +119,7 @@ li a {
       top: 0;
     }
     .item .category {
-      @include font-styles($font-size: 20px, $line-height: 24px);
+      @include font-styles($font-size: 20px);
       @include display-flex();
 
       width: 203px;
@@ -190,7 +194,7 @@ li a {
         margin-right: 21px;
       }
       .service-text {
-        @include font-styles($font-size: 15px, $line-height: 18px);
+        @include font-styles($font-size: 15px);
       }
     }
   }
@@ -233,57 +237,38 @@ li a {
       margin: 9px 18px -6px 33px;
 
       .text-one{
-        @include font-styles($font-weight:600,$font-size:18px,$line-height:21px);
+        @include font-styles($font-weight:600,$font-size:18px);
 
-        margin-top: -4px;
+        margin-top: 2px;
 
       }
       .text-two{
-        @include font-styles($font-size:13px,$line-height:16px);
+        @include font-styles($font-size:13px);
         
         margin-bottom: 20px;
         margin-top: 4px;
       }
       .timer{
         .time{
-          @include font-styles($font-size:18px,$line-height:24px);
+          @include font-styles($font-size:18px);
          
           background: $timer-count-color;
           border-radius: 5px;
           padding: 7px;
         }
         .split{
-          @include font-styles($font-size:20px,$line-height:24px);
+          @include font-styles($font-size:20px);
           
         }
       }
-      .shop-more-button{
-        margin-top: 15px;
-        margin-left: 12px;
-        padding: 7px;
-        background: $brand-color;
-        border-radius: 8px;
-        color: $text-white-color;
-      }
-
-      .shadow-3{
-        @include position($position:absolute,$top:-5px,$right:-5px);
-       
-        transform: rotate(-180deg);
+      
+      .bubble-top{
+        @include position($top:-2px,$right:-4px);
        
       }
-      .shadow-4{
-        @include position($position:absolute,$top:-185px,$right:-6px);
-
-      }
-      .shadow-5{
-        @include position($position:absolute,$bottom:0,$left:0);
-        
-      }
-      .shadow-6{
-        @include position($position:absolute,$bottom:-183px,$left:0);
-        
-        transform: rotate(-180deg);
+      .bubble-bottom{
+        @include position($bottom:-3px,$left:-4px);
+    
       }
 
     }
@@ -304,27 +289,6 @@ li a {
             height: 258px;
           }
             
-          .free-shipping{
-            @include position($position:absolute,$bottom:4px,$right:0px);
-            @include display-flex($justify:space-around);
-
-            width: 146px;
-            height: 39.26px;
-            background: $brand-color;
-            border-radius: 5px 0px;
-            color: $text-white-color;
-            padding: 8px;
-
-            .free-shipping-bus{
-              width: 19px;
-            }
-
-            .text-one{
-              @include font-styles($font-size:13px,$line-height:15px);
-            
-            }
-          
-          }
         }
 
       .product-info{
@@ -334,16 +298,16 @@ li a {
         margin-left: 16px;
        
         .name{
-          @include font-styles($font-size:16px,$line-height:20px,$font-weight:600);
+          @include font-styles($font-size:16px,$font-weight:600);
 
           margin-bottom: 6px;
         }
         .price{
-          @include font-styles($font-size:20px,$line-height:24px);
+          @include font-styles($font-size:20px);
         }
         .strike-price{
           color: $strike-price-color;
-          @include font-styles($font-size:12px,$line-height:15px);
+          @include font-styles($font-size:12px);
         }
       
       }
@@ -357,18 +321,240 @@ li a {
       }
     }
     
-    .linear-scroll{
-      @include position($position:absolute,$right:6px,$top:150px);
-  
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: $text-white-color;
-      box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
-      .arrow{
-        @include position($position:absolute,$left:37%,$top:30%);
-        color: $arrow-color;
+  }
+}
+
+// mall section
+.mall{
+  height: 540px;
+  display: grid;
+  grid-template-rows: 133px 92px 315px;
+  padding: 0 188px;
+  margin-top: 260px;
+  margin-bottom: 18px;
+  background: linear-gradient(90.14deg, rgba(180, 250, 255, 0.33) 0.11%, rgba(0, 255, 204, 0.5) 99.88%);
+
+  .top{
+    position: relative;
+    .carrousal{
+      img{
+        @include position($top:-260px);
+        width: 1130px;
+        height: 390px;
+        border-radius: 5px;
+        
+      }
+      .offer{
+        @include display-flex;
+        @include position($top:-260px,$right:5px);
+        flex-direction: column;
+        width: 572px;
+        height: 390px;
+        z-index: 99;
+        background: linear-gradient(262.33deg, rgba(255, 255, 255, 0.79) 31.52%, rgba(255, 255, 255, 0) 136.25%);
+        box-sizing: border-box;
+        backdrop-filter: blur(4px);
+        border-radius: 0px 6px 6px 0px;
+
+        &-box{
+
+        display: flex;
+        justify-content: right;
+        margin-right: 70px;
+        flex-direction: column;
+
+        .offer-amount{
+          @include font-styles($font-size:80px);
+          text-align: right;
+          color: $text-green-color;
+
+        }
+        .offer-text{
+          @include font-styles($font-size:20px);
           
+          text-align: right;
+          color: $text-green-color;
+          }
+      }
+      }
+
+    }
+  }
+  .middle{
+    @include display-flex;
+    
+      .left-line{
+        width: 398px;
+        height: 0;
+        border: 1px solid rgba(1, 11, 12, 0.4);
+      }
+      .text-one{
+        @include font-styles($font-size:35px);
+        margin: 0 18px;
+        
+      }
+  }
+
+  .bottom{
+    display: flex;
+    position: relative;
+    .product-card{
+      height: 258px;
+      background: $text-white-color;
+      border-radius: 5px;
+      margin-right: 11px;
+      img{
+        border-radius: 5px;
+        padding: 5px;
+      }
+      .product-info{
+        .name{
+          @include font-styles($font-size:17px,$font-weight:600);
+          
+          text-align: center;
+          color: $text-green-color;
+          margin-top: 12px;
+        }
+        .info{
+          @include font-styles($font-size:10px);
+         
+          text-align: center;
+          color: $text-green-color;
+          margin-bottom: 16px;
+        }
+      }
+    }
+    
+  }
+}
+
+// compelling offers
+.offer-product{
+  position: relative;
+  margin: 10px 20px 18px 0px;
+  width: 294px;
+  height: 362px;
+  img{
+    width: 292px;
+    height: 289px;
+    padding: 3px;
+  }
+
+    &-overlay{
+      @include position($top:0);
+      @include display-flex;
+      
+      width: 294px;
+      height: 362px;
+      background: rgba(255, 255, 255, 0.7);
+      flex-direction: column;
+      align-items: center;
+      .text-one{
+        @include font-styles($font-size:25px);
+        
+        margin-right: 123px;
+        margin-top: -140px;
+      }
+      .text-two{
+        @include font-styles($font-size:50px);
+       
+        color: $text-red-color;
+      }
+      .text-three{
+        @include font-styles($font-size:25px);
+        
+        margin-left: 96px;
+      }
+      .text-four{
+        @include font-styles($font-size:20px);
+        @include position($bottom:19px,$left:110px);
+        
+      }
+      img{
+        @include position($bottom:19px,$left:10px);
+        
+        width: 88px;
+        height: 80px;
+        object-fit: contain;
+        box-sizing: border-box;
+      }
+    }
+}
+
+// collections
+.collection{
+  position: relative;
+  width: 1448px;
+  height: 799px;
+  background: $text-white-color;
+  border-radius: 5px;
+  margin: 0px 28px 46px 28px;
+  padding: 96px;
+  .top-bubble{
+    @include position($top:0,$right:0);
+    
+  }
+  .bottom-bubble{
+    @include position($bottom:0,$left:0);
+    
+  }
+  .top-view{
+    @include display-flex($justify:space-between);
+    
+    margin-bottom: 11px;
+    margin-top: -20px;
+  
+    .text-one{
+      @include font-styles($font-size:30px);
+     
+      margin-bottom: 12px;
+    }
+    
+  }
+ 
+  &-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 6px;
+    
+
+    .collection-img{
+      position: relative;
+      z-index: 99;
+      img{
+        width: 100%;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 5px;
+      }
+      &-overlay{
+        @include position($top:0,$left:0);
+        background: rgba(255, 255, 255, 0.6);
+        border-radius: 5px;
+        width: 625px;
+        height: 194px;
+
+        .overlay{
+          @include display-flex;
+          @include position($top:34%,$left:28%);
+          background: linear-gradient(92.72deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.5875) 35.42%, rgba(255, 255, 255, 0.2) 100%);
+          border: 0.5px solid rgba(255, 255, 255, 0.81);
+          box-sizing: border-box;
+          backdrop-filter: blur(10px);
+          border-radius: 5px;
+          flex-direction: column;
+          padding: 12px 39px;
+
+          .text-two{
+            @include font-styles($font-size:25px);
+            
+          }
+          .text-three{
+            @include font-styles($font-size:12px);
+            
+          }
+                  
+        }
       }
     }
   }
@@ -397,7 +583,7 @@ footer{
     }
 
     p{
-      @include font-styles($font-size:15px,$line-height:21px);
+      @include font-styles($font-size:15px,$font-weight: 400);
    
       margin-right: 80px;
       color: $footer-light-text-color;
@@ -424,13 +610,15 @@ footer{
         border-radius: 5px;
         margin-right: 18px;
       }
+      h4{
+        @include font-styles($font-size:20px);
+        color: $footer-light-text-color;
+       
+      }
       &-info{
         display: flex;
         align-items: center;
-        h4{
-          @include font-styles($font-size:20px,$line-height:23px);
-         
-        }
+        
         img{
           width: 27px;
           height: 27px;
@@ -438,11 +626,12 @@ footer{
           margin-bottom: 10px;
         }
         .app-text{
-          @include font-styles($font-size:8px,$line-height:9px);
+          @include font-styles($font-size:8px);
          
           color: $footer-light-text-color;
+          margin-left: -8px;
           span{
-            @include font-styles($font-size:12px,$line-height:14px);
+            @include font-styles($font-size:12px);
            
             color: $footer-light-text-color;
           }
@@ -459,21 +648,22 @@ footer{
     margin-left: 93px;
     .top-footer{
       display: grid;
-      grid-template-columns: repeat(3,1fr);
+      // grid-template-columns: repeat(3,1fr);
+      grid-template-columns: 212px 212px 246px;
       margin-bottom: 50px;
 
       ul{
         list-style: none;
         
         li a{
-          @include font-styles($font-size:16px,$line-height:24px);
+          @include font-styles($font-size:14px, $font-weight:400);
           
           color: $footer-light-text-color;
           
         }
 
         .first-text{
-          @include font-styles($font-size:24px,$line-height:21px);
+          @include font-styles($font-size:24px);
           
           color: $footer-text-color;
         }
@@ -486,7 +676,7 @@ footer{
 
     .bottom-footer{
       h3{
-        @include font-styles($font-size:20px,$line-height:23px);
+        @include font-styles($font-size:20px );
         
       }
       .payment{
@@ -511,6 +701,29 @@ footer{
 
     border: 0.5px solid rgba(227, 227, 227, 0.78);
     transform: rotate(90.15deg);
+  }
+}
+
+// copyright
+.copyright{
+  height: 55px;
+  background: $copyright-bg;
+ 
+    ul{
+      list-style: none;
+      display: flex;
+      margin-left: 132px;
+      margin-right: 700px;
+      
+      li{
+        display: flex;
+        margin-top: 22px;
+     
+       a{
+        margin-left: 22px;
+        color: $footer-text-color;
+      }
+    }
   }
 }
 
