@@ -4,7 +4,6 @@
   left: -10px;
   font-weight: 500;
   font-size: 13px;
-  line-height: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,13 +21,14 @@
   color: #ffffff;
   border-radius: 5px;
   padding: 7px;
+  border: 0;
   cursor: pointer;
 }
 
 .free-shipping {
   position: absolute;
   right: 0px;
-  bottom: 4px;
+  bottom: 3px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -41,13 +41,11 @@
 .free-shipping .text-one {
   font-weight: 500;
   font-size: 13px;
-  line-height: 15px;
 }
 
 .view-all-button {
   font-weight: 500;
   font-size: 15px;
-  line-height: 18px;
   padding: 7px 23px;
   outline: none;
   z-index: 99;
@@ -56,7 +54,6 @@
 .shop-now-button {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
   width: 212px;
   height: 42px;
   outline: none;
@@ -98,7 +95,6 @@ li a {
   position: relative;
   margin: 0 20px;
   font-size: 14px;
-  line-height: 17px;
 }
 
 /* Second header */
@@ -114,7 +110,6 @@ li a {
 .main-nav .logo {
   font-weight: 500;
   font-size: 30px;
-  line-height: 47px;
   padding-left: 43px;
 }
 .main-nav .main-items {
@@ -130,14 +125,13 @@ li a {
 .main-nav .main-items .item .hotline-section .hotline {
   font-weight: 500;
   font-size: 15px;
-  line-height: 18px;
   color: #000000;
-  margin-left: 4px;
+  margin-left: 5px;
+  margin-top: 2px;
 }
 .main-nav .main-items .item .hotline-section .hotline .hot-number {
   font-weight: 500;
   font-size: 10px;
-  line-height: 12px;
 }
 .main-nav .main-items .item .header__search {
   display: flex;
@@ -188,7 +182,6 @@ li a {
 .main-nav .main-items .item .category {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -253,7 +246,6 @@ li a {
 .section-one .left .services .service-text {
   font-weight: 500;
   font-size: 15px;
-  line-height: 18px;
 }
 .section-one .right {
   width: 1049px;
@@ -292,20 +284,17 @@ li a {
 .sells-section .flash-sells .flash-timer .text-one {
   font-weight: 600;
   font-size: 18px;
-  line-height: 21px;
   margin-top: 2px;
 }
 .sells-section .flash-sells .flash-timer .text-two {
   font-weight: 500;
   font-size: 13px;
-  line-height: 16px;
   margin-bottom: 20px;
   margin-top: 4px;
 }
 .sells-section .flash-sells .flash-timer .timer .time {
   font-weight: 500;
   font-size: 18px;
-  line-height: 24px;
   background: #b2fced;
   border-radius: 5px;
   padding: 7px;
@@ -313,29 +302,16 @@ li a {
 .sells-section .flash-sells .flash-timer .timer .split {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
 }
-.sells-section .flash-sells .flash-timer .shadow-3 {
+.sells-section .flash-sells .flash-timer .bubble-top {
   position: absolute;
-  top: -3px;
-  right: -5px;
-  transform: rotate(-180deg);
+  top: -2px;
+  right: -4px;
 }
-.sells-section .flash-sells .flash-timer .shadow-4 {
-  position: absolute;
-  top: -184px;
-  right: -6px;
-}
-.sells-section .flash-sells .flash-timer .shadow-5 {
+.sells-section .flash-sells .flash-timer .bubble-bottom {
   position: absolute;
   left: -4px;
-  bottom: -4px;
-}
-.sells-section .flash-sells .flash-timer .shadow-6 {
-  position: absolute;
-  left: -1px;
-  bottom: -185px;
-  transform: rotate(-180deg);
+  bottom: -3px;
 }
 .sells-section .flash-sells .product-card {
   width: 294px;
@@ -362,19 +338,16 @@ li a {
 .sells-section .flash-sells .product-card .product-info .name {
   font-weight: 600;
   font-size: 16px;
-  line-height: 20px;
   margin-bottom: 6px;
 }
 .sells-section .flash-sells .product-card .product-info .price {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
 }
 .sells-section .flash-sells .product-card .product-info .strike-price {
   color: #919191;
   font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
 }
 .sells-section .flash-sells .product-card .actions {
   display: flex;
@@ -448,14 +421,12 @@ li a {
 .mall .top .carrousal .offer-box .offer-amount {
   font-weight: 500;
   font-size: 80px;
-  line-height: 98px;
   text-align: right;
   color: #0D5054;
 }
 .mall .top .carrousal .offer-box .offer-text {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
   text-align: right;
   color: #0D5054;
 }
@@ -472,7 +443,6 @@ li a {
 .mall .middle .text-one {
   font-weight: 500;
   font-size: 35px;
-  line-height: 43px;
   margin: 0 18px;
 }
 .mall .bottom {
@@ -490,9 +460,8 @@ li a {
   padding: 5px;
 }
 .mall .bottom .product-card .product-info .name {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 17px;
-  line-height: 21px;
   text-align: center;
   color: #0D5054;
   margin-top: 12px;
@@ -500,7 +469,6 @@ li a {
 .mall .bottom .product-card .product-info .info {
   font-weight: 500;
   font-size: 10px;
-  line-height: 12px;
   text-align: center;
   color: #0D5054;
   margin-bottom: 16px;
@@ -555,26 +523,22 @@ li a {
 .offer-product-overlay .text-one {
   font-weight: 500;
   font-size: 25px;
-  line-height: 30px;
   margin-right: 123px;
   margin-top: -140px;
 }
 .offer-product-overlay .text-two {
   font-weight: 500;
   font-size: 50px;
-  line-height: 61px;
   color: #EB001B;
 }
 .offer-product-overlay .text-three {
   font-weight: 500;
   font-size: 25px;
-  line-height: 30px;
   margin-left: 96px;
 }
 .offer-product-overlay .text-four {
   font-weight: 500;
   font-size: 20px;
-  line-height: 24px;
   position: absolute;
   left: 110px;
   bottom: 19px;
@@ -618,14 +582,13 @@ li a {
 .collection .top-view .text-one {
   font-weight: 500;
   font-size: 30px;
-  line-height: 12px;
   margin-bottom: 12px;
 }
 .collection-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 6px;
 }
 .collection-grid .collection-img {
   position: relative;
@@ -663,12 +626,10 @@ li a {
 .collection-grid .collection-img-overlay .overlay .text-two {
   font-weight: 500;
   font-size: 25px;
-  line-height: 30px;
 }
 .collection-grid .collection-img-overlay .overlay .text-three {
   font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
 }
 
 footer {
@@ -688,7 +649,6 @@ footer .left {
 footer .left h3 {
   font-weight: 500;
   font-size: 40px;
-  line-height: 47px;
   padding: 2px;
   margin-top: 63px;
   color: #E3E3E3;
@@ -696,7 +656,6 @@ footer .left h3 {
 footer .left p {
   font-weight: 400;
   font-size: 15px;
-  line-height: 21px;
   margin-right: 80px;
   color: #afafaf;
 }
@@ -723,7 +682,6 @@ footer .left .get-app img {
 footer .left .get-app h4 {
   font-weight: 500;
   font-size: 20px;
-  line-height: 23px;
   color: #afafaf;
 }
 footer .left .get-app-info {
@@ -739,14 +697,12 @@ footer .left .get-app-info img {
 footer .left .get-app-info .app-text {
   font-weight: 500;
   font-size: 8px;
-  line-height: 9px;
   color: #afafaf;
   margin-left: -8px;
 }
 footer .left .get-app-info .app-text span {
   font-weight: 500;
   font-size: 12px;
-  line-height: 14px;
   color: #afafaf;
 }
 footer .right {
@@ -764,13 +720,11 @@ footer .right .top-footer ul {
 footer .right .top-footer ul li a {
   font-weight: 400;
   font-size: 14px;
-  line-height: 23px;
   color: #afafaf;
 }
 footer .right .top-footer ul .first-text {
   font-weight: 500;
   font-size: 24px;
-  line-height: 21px;
   color: #E3E3E3;
 }
 footer .right .top-footer ul li:first-child {
@@ -779,7 +733,6 @@ footer .right .top-footer ul li:first-child {
 footer .right .bottom-footer h3 {
   font-weight: 500;
   font-size: 20px;
-  line-height: 23px;
 }
 footer .right .bottom-footer .payment {
   width: 74px;

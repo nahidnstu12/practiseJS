@@ -6,12 +6,11 @@
 //     font-size: $font-size;
 //     line-height: $line-height;
 // }
-@mixin font-styles($font-weight:500,$font-size:30px,$line-height:47px) {
-    // font-family: $font-family;
-    // font-style: normal;
+@mixin font-styles($font-weight:500,$font-size:30px) {
+   
     font-weight: $font-weight;
     font-size: $font-size;
-    line-height: $line-height;
+    // line-height: $line-height;
 }
 
 @mixin display-flex($flex:flex,$justify:center,$align-items:center) {
@@ -20,7 +19,7 @@
     align-items: $align-items;
 }
 
-@mixin position($position:relative,$top:null,$left:null,$right:null,$bottom:null) {
+@mixin position($position:absolute,$top:null,$left:null,$right:null,$bottom:null) {
     position: $position;
     top:$top;
     left:$left;
@@ -31,8 +30,8 @@
 
 // placeholder
 %count-style{
-    @include position($left:-10px,$top:-10px);
-    @include font-styles($font-size: 13px, $line-height: 12px);
+    @include position($position:relative,$left:-10px,$top:-10px);
+    @include font-styles($font-size: 13px);
     @include display-flex();
 
     width: 20px;
